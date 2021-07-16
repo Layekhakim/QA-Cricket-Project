@@ -1,0 +1,30 @@
+<html>
+    <header>
+        <title>
+           Cricket Players Generator
+        </title>
+    </header>
+    <body style="background-color:bisque;">
+        <h1>
+            Cricket Players
+        </h1>
+        <h2>
+          Refresh the page to generate a cricket player and an opponent to see how many runs they scored
+        </h2>
+
+        <p style="font-family:verdana;">
+          {{ runs }}<br><br>
+          Player chosen: {{ player }} <br>
+          Team chosen: {{ team }}
+      </p>
+      
+      <h2> Runs Scored </h2>
+      {% for runs in view_players %}
+      Player chosen was {{ runs.name }} --- Team chosen was {{ runs.team }}<br>
+      The runs scored was {{ runs.runs }}<br><br>
+      
+      {% endfor %}
+      
+      </body>
+      
+</html>

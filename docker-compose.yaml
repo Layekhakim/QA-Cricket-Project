@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  service_1: 
+    container_name: service_1
+    image: layekhakim/service_1
+    build: ./service_1
+    ports: 
+     - target: 5000
+       published: 5000
+    environment:
+       DATABASE_URI: ${DATABASE_URI}
+    
+
+  cricket_project_player_backend:
+    container_name: cricket_project_player_backend
+    image: layekhakim/service_2
+    build: ./service_2
+    ports: 
+     - target: 5001
+
+  cricket_project_team_backend:
+    container_name: cricket_project_team_backend
+    image: layekhakim/service_3
+    build: ./service_3
+    ports: 
+      - target: 5002
+    
+
+  cricket_project_runs_backend:
+    container_name: cricket_project_runs_backend
+    image: layekhakim/service_4
+    build: ./service_4
+    ports:
+      - target: 5003
+    
+
