@@ -5,10 +5,11 @@ pipeline {
         DOCKER_PASSWORD = credentials('DOCKER_PASSWORD')
     }
     stages {
-        stage('Install Requirements')
+        stage('Install Requirements') {
             steps {
                 sh 'bash jenkins/install-requirements.sh'
-        
+            }
+        }
         
         stage('Test') {
             steps {
