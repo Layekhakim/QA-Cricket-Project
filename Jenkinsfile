@@ -30,14 +30,14 @@ pipeline {
             steps {
                 // install docker and docker compose
                 // docker-compose build
-                sh 'docker-compose build --parallel'
+                sh 'echo build'
             }
         }
         stage('Push') {
             steps {
                 // install docker and docker compose
                 // docker-compose push
-                sh 'docker-compose push'
+                sh 'echo push'
             }
         }
         stage('Configuration Manegement (Ansible)') {
@@ -45,7 +45,7 @@ pipeline {
                 // install ansible on jenkins machine for the jenkins user
                 // ansible-playbook -i inventory.yaml playbook.yaml
                 // sh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
-                sh 'cd ansible && ~/.local/bin/ansible-playbook -i inventory.yaml playbook.yaml'
+                sh 'echo config'
 
             }
         }
@@ -54,7 +54,7 @@ pipeline {
                 // create swarm insfrastucture
                 // copy ove docker-compose.yaml
                 // ssh: docker stack deploy --compose-file docker-compose.yaml cricket_project
-                sh 'bash jenkins/deploy.sh'
+                sh 'echo deploy'
 
             }
         }
