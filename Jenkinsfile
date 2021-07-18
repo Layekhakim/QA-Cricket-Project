@@ -40,18 +40,17 @@ pipeline {
                 sh 'echo push'
             }
         }
-        stage('Configuration Manegement (Ansible)') {
+        stage('Configuration Management (Ansible)') {
             steps {
                 // install ansible on jenkins machine for the jenkins user
                 // ansible-playbook -i inventory.yaml playbook.yaml
-                // sh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
                 sh 'echo config'
 
             }
         }
         stage('Deploy') {
             steps {
-                // create swarm insfrastucture
+                // create swarm infrastucture
                 // copy ove docker-compose.yaml
                 // ssh: docker stack deploy --compose-file docker-compose.yaml cricket_project
                 sh 'echo deploy'
