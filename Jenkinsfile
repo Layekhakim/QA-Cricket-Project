@@ -3,13 +3,20 @@ pipeline {
     environment {
         DOCKER_USERNAME = credentials('DOCKER_USERNAME')
         DOCKER_PASSWORD = credentials('DOCKER_PASSWORD')
+        install = 'false'
+        DATABASE_URI = credentials('DATABASE_URI')
     }
     stages {
         stage('Install Requirements') {
             steps {
-                sh 'bash jenkins/install-requirements.sh'
-            }
+                script{
+                    if (env.install== 'false'){
+                        sh 'bash jenkins/install-requirements.sh'
+                    }
+                }
+            }    
         }
+        
         
         stage('Test') {
             steps {
@@ -33,19 +40,21 @@ pipeline {
                 sh 'docker-compose push'
             }
         }
-        stage('Configuration Management (Ansible)') {
+        stage('Configuration Manegement (Ansible)') {
             steps {
                 // install ansible on jenkins machine for the jenkins user
                 // ansible-playbook -i inventory.yaml playbook.yaml
-                sh 'echo config'
+                // sh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
+                sh 'cd ansible && ~/.local/bin/ansible-playbook -i inventory.yaml playbook.yaml'
+
             }
         }
         stage('Deploy') {
             steps {
-                // create swarm infrastucture
-                // copy over docker-compose.yaml
+                // create swarm insfrastucture
+                // copy ove docker-compose.yaml
                 // ssh: docker stack deploy --compose-file docker-compose.yaml cricket_project
-                sh 'echo deploy'
+                sh 'bash jenkins/deploy.sh'
 
             }
         }
