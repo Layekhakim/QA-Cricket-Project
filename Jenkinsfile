@@ -40,12 +40,12 @@ pipeline {
                 sh 'docker-compose push'
             }
         }
-        stage('Configuration Manegement (Ansible)') {
+        stage('Configuration Management (Ansible)') {
             steps {
                 // install ansible on jenkins machine for the jenkins user
                 // ansible-playbook -i inventory.yaml playbook.yaml
                 // ssh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
-                sh '~/.local/bin/ansible-playbook -i inventory.yaml playbook.yaml'
+                sh 'home/qa/ansible-playbook -i inventory.yaml playbook.yaml'
 
             }
         }
