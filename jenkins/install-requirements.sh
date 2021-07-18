@@ -24,3 +24,4 @@ docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
 
 echo Username: $DOCKER_USERNAME
 echo Password: $DOCKER_PASSWORD
+

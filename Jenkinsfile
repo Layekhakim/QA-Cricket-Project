@@ -43,7 +43,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // create swarm infrastucture
-                // copy ove docker-compose.yaml
+                // copy over docker-compose.yaml
                 // ssh: docker stack deploy --compose-file docker-compose.yaml cricket_project
                 sh 'echo deploy'
 
