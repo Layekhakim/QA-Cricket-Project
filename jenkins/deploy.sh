@@ -1,5 +1,5 @@
 #!/bin/bash
-#copy over compose yaml to manager node
+
 scp -i ~/.ssh/id_rsa docker-compose.yaml jenkins@instance-1:/home/jenkins/docker-compose.yaml
 
 #docker stack deploy

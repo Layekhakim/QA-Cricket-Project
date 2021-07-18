@@ -44,15 +44,15 @@ pipeline {
             steps {
                 // install ansible on jenkins machine for the jenkins user
                 // ansible-playbook -i inventory.yaml playbook.yaml
-                // sh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
-                sh 'cd ansible && ~/.local/bin/ansible-playbook -i inventory.yaml playbook.yaml'
+                // ssh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
+                sh '~/.local/bin/ansible-playbook -i inventory.yaml playbook.yaml'
 
             }
         }
         stage('Deploy') {
             steps {
-                // create swarm insfrastucture
-                // copy ove docker-compose.yaml
+                // create swarm infrastucture
+                // copy over docker-compose.yaml
                 // ssh: docker stack deploy --compose-file docker-compose.yaml cricket_project
                 sh 'bash jenkins/deploy.sh'
 
