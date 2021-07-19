@@ -18,6 +18,7 @@ mkdir -p ~/.local/bin
 echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
 source ~/.bashrc
 sudo apt install python3-pip -y
+sudo apt install python-pip -y
 pip3 install --user ansible
 ansible --version
 docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
