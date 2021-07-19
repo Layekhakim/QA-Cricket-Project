@@ -47,7 +47,7 @@ In order to achieve the brief and achieve the SFIA requirements, the following r
 * When any change is made to the code it is pushed to the VCS, webhooks must be set up for the CI server to recreate and redeploy the application
 * Containerisation: Docker
 * Ansible playbook must be made that will provide the environment for the application to run.
-* A reverse proxy must be set up to make the applciation accessible to the user(NGINX).
+* A reverse proxy must be set up to make the application accessible to the user(NGINX).
 
 ## Software Architecture
 #
