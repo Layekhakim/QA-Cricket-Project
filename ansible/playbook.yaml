@@ -9,9 +9,9 @@
   roles:
   - docker
   - worker
-- hosts: nginx
+- hosts: ansible-project
   become: true
   roles:
-  - ansible-project
-# abc
+  - nginx
+
 
