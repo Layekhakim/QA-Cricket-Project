@@ -10,7 +10,7 @@ all:
     workers:
       hosts:
         worker: 
-    #load-balancer:
-     # hosts:
-      #  nginx:
+    load-balancer:
+      hosts:
+        ansible-project:
     
