@@ -44,8 +44,7 @@ pipeline {
             steps {
                 // install ansible on jenkins machine for the jenkins user
                 // ansible-playbook -i inventory.yaml playbook.yaml
-                // ssh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
-                sh 'home/qa/playbook.yaml ansible-playbook -i inventory.yaml playbook.yaml'
+               sh ''cd ansible && ~/.local/bin/ansible-playbook -i inventory.yaml playbook.yaml''
 
             }
         }
