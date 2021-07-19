@@ -10,7 +10,7 @@ pipeline {
         stage('Install Requirements') {
             steps {
                 script{
-                    if (env.install== 'false'){
+                    if (env.install== 'true'){
                         sh 'bash jenkins/install-requirements.sh'
                     }
                 }
