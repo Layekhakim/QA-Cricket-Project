@@ -1,9 +1,9 @@
 #!/bin/bash
 
-scp -i ~/.ssh/id_rsa docker-compose.yaml jenkins@instance-1:/home/jenkins/docker-compose.yaml
+scp -i ~/id_rsa docker-compose.yaml qa@instance-1:/home/qa/docker-compose.yaml
 
 #docker stack deploy
-ssh -i ~/.ssh/ansible_id_rsa jenkins@instance-1 << EOF
+ssh -i ~/.ssh/id_rsa  qa@instance-1 << EOF
     export DATABASE_URI=${DATABASE_URI}
     docker stack deploy --compose-file docker-compose.yaml cricket_project
 EOF
