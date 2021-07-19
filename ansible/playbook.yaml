@@ -12,6 +12,6 @@
 - hosts: nginx
   become: true
   roles:
-  - nginx
+  - ansible-project
 
 
