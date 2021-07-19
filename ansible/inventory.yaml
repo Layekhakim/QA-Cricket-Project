@@ -10,4 +10,7 @@ all:
     workers:
       hosts:
         worker: 
+    load-balancer:
+      hosts:
+        nginx:
     
